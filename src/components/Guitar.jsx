@@ -1,6 +1,4 @@
-export default function Guitar() {
-
-  console.log(Guitar.nombre)
+export default function Guitar( { guitar, addGuitar } ) {
 
   return (
     <>
@@ -8,20 +6,20 @@ export default function Guitar() {
       <div className="col-4">
         <img
           className="img-fluid"
-          src={`/img/${ Guitar.imagen }.jpg`} alt="imagen guitarra"
+          src={`/img/${ guitar.imagen }.jpg`} alt="imagen guitarra"
         />
       </div>
       <div className="col-8">
-        <h3 className="text-black fs-4 fw-bold text-uppercase">{ Guitar.nombre }</h3>
-        <p>{ Guitar.descripcion }</p>
-        <p className="fw-bold text-primary fs-3">${ Guitar.precio }</p>
+        <h3 className="text-black fs-4 fw-bold text-uppercase">{ guitar.nombre }</h3>
+        <p>{ guitar.descripcion }</p>
+        <p className="fw-bold text-primary fs-3">${ guitar.precio }</p>
         <button
+          onClick={ () => addGuitar(guitar) }
           type="button"
           className="btn btn-dark w-100"
         >Agregar al Carrito</button>
       </div>
     </div>
-  );
   </>
   )
 }
